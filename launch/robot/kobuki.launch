@@ -1,0 +1,15 @@
+<!-- -->
+<launch>
+  <arg name="rgb_processing"     default="false"/>
+  <arg name="depth_registration" default="false" />
+  <arg name="depth_processing"   default="false" />
+
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+
+  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+    <arg name="rgb_processing"     value="$(arg rgb_processing)" />
+    <arg name="depth_registration" value="$(arg depth_registration)" />
+    <arg name="depth_processing"   value="$(arg depth_processing)" />
+    <arg name="scan_topic" value="/scan" />
+  </include>
+</launch>

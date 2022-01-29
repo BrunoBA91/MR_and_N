@@ -1,0 +1,6 @@
+<!-- -->
+<launch>
+
+  <include file="$(find upc_mrn)/launch/includes/gmapping.launch.xml" />
+
+</launch>

@@ -1,0 +1,3 @@
+<include file="upc_mrn/launch/sim.launch">
+<include file="upc_mrn/launch/slam.launch">
+<include file="upc_mrn/launch/move_base.launch">

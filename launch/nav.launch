@@ -1,0 +1,17 @@
+<!-- -->
+<launch>
+
+  <arg name="map" default="scene1"/>
+
+  <include file="$(find upc_mrn)/launch/includes/move_base.launch.xml" />
+
+  <!--<include file="$(find upc_mrn)/launch/includes/fake_localization.launch.xml" />-->
+  <include file="$(find upc_mrn)/launch/includes/amcl.launch.xml" />
+
+  <include file="$(find upc_mrn)/launch/includes/map_server.launch.xml">
+    <arg name="map" value="$(arg map)"/>
+  </include>
+
+  <!--<node pkg="rviz" type="rviz" name="rviz" args="-d $(find upc_mrn)/config/navigation.rviz"/>-->
+
+</launch>
