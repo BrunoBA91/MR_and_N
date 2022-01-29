@@ -1,0 +1,16 @@
+<!-- http://wiki.ros.org/amcl -->
+<launch>
+  <arg name="odom_topic" default="odom" />
+
+  <node name="fake_localization"
+        pkg ="fake_localization"
+        type="fake_localization">
+    <param name="odom_frame_id"   value="odom" />
+    <param name="global_frame_id" value="map" />
+    <param name="base_frame_id"   value="base_footprint" />
+    <param name="delta_x"   value="0.0" />
+    <param name="delta_y"   value="0.0" />
+    <param name="delta_yaw" value="0.0" />
+    <remap from="base_pose_ground_truth" to="$(arg odom_topic)"/>
+  </node>
+</launch>
